@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import useDespensa from "hooks/useDespensa";
-import { formatearDinero } from "helpers";
+import useDespensa from "../hooks/useDespensa";
+import { formatearDinero } from "../helpers";
 
 const ModalProducto = () => {
   const { producto, handleChangeModal, handleAgregarPedido, pedido } =

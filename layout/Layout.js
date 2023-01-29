@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";
+import Modal from "react-modal";
 import Sidebar from "../components/Sidebar";
 import Pasos from "../components/Pasos";
 import ModalProducto from "../components/ModalProducto";
-import Modal from "react-modal";
 import useDespensa from "../hooks/useDespensa";
-
 import "react-toastify/dist/ReactToastify.css";
 
 const customStyles = {

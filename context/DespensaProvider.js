@@ -11,6 +11,7 @@ const DespensaProvider = ({ children }) => {
   const [producto, setProducto] = useState({});
   const [modal, setModal] = useState(false);
   const [pedido, setPedido] = useState([]);
+  const [nombre, setNombre] = useState(``);
 
   const router = useRouter();
 
@@ -70,6 +71,10 @@ const DespensaProvider = ({ children }) => {
     const pedidoActualizado = pedido.filter((producto) => producto.id !== id);
     setPedido(pedidoActualizado);
   };
+
+  const colocarOrden = async (e) => {
+    e.preventDefault();
+  };
   return (
     <DespensaContext.Provider
       value={{
@@ -84,6 +89,9 @@ const DespensaProvider = ({ children }) => {
         pedido,
         handleEditarCantidad,
         handleEliminarProducto,
+        nombre,
+        setNombre,
+        colocarOrden,
       }}>
       {children}
     </DespensaContext.Provider>

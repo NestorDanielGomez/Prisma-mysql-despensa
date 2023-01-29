@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useDespensa from "hooks/useDespensa";
+import useDespensa from "../hooks/useDespensa";
 
 const Categoria = ({ categoria }) => {
   const { id, nombre, icono } = categoria;
