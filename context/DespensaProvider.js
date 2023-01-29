@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext } from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -10,6 +11,8 @@ const DespensaProvider = ({ children }) => {
   const [producto, setProducto] = useState({});
   const [modal, setModal] = useState(false);
   const [pedido, setPedido] = useState([]);
+
+  const router = useRouter();
 
   const getCategorias = async () => {
     try {
@@ -31,6 +34,7 @@ const DespensaProvider = ({ children }) => {
   const handleClickCategoria = (id) => {
     const categoria = categorias.filter((cat) => cat.id === id);
     setCategoriaActual(categoria[0]);
+    router.push("/");
   };
 
   const handleSetProducto = (producto) => {
@@ -56,6 +60,16 @@ const DespensaProvider = ({ children }) => {
 
     setModal(false);
   };
+  const handleEditarCantidad = (id) => {
+    const productoActualizar = pedido.filter((producto) => producto.id === id);
+    setProducto(productoActualizar[0]);
+    setModal(!modal);
+  };
+
+  const handleEliminarProducto = (id) => {
+    const pedidoActualizado = pedido.filter((producto) => producto.id !== id);
+    setPedido(pedidoActualizado);
+  };
   return (
     <DespensaContext.Provider
       value={{
@@ -68,6 +82,8 @@ const DespensaProvider = ({ children }) => {
         modal,
         handleAgregarPedido,
         pedido,
+        handleEditarCantidad,
+        handleEliminarProducto,
       }}>
       {children}
     </DespensaContext.Provider>

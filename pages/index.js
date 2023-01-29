@@ -1,6 +1,6 @@
 import Layout from "../Layout/Layout";
 import useDespensa from "../hooks/useDespensa";
-import Producto from "components/Producto";
+import Producto from "../components/Producto";
 
 export default function Home() {
   const { categoriaActual } = useDespensa();

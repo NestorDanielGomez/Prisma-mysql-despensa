@@ -1,9 +1,11 @@
 import Head from "next/head";
-import Sidebar from "components/Sidebar";
-import ModalProducto from "components/ModalProducto";
-import Modal from "react-modal";
-import useDespensa from "hooks/useDespensa";
 import { ToastContainer } from "react-toastify";
+import Sidebar from "../components/Sidebar";
+import Pasos from "../components/Pasos";
+import ModalProducto from "../components/ModalProducto";
+import Modal from "react-modal";
+import useDespensa from "../hooks/useDespensa";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const customStyles = {
@@ -21,11 +23,11 @@ Modal.setAppElement("#__next");
 
 export default function Layout({ children, pagina }) {
   const { modal } = useDespensa();
-  console.log("hola", modal);
+
   return (
     <>
       <Head>
-        <title>Despensa - {pagina}</title>
+        <title>{`Despensa - ${pagina}`}</title>
         <meta name="description" content="despensa" />
       </Head>
       <div className="md:flex ">
@@ -33,7 +35,10 @@ export default function Layout({ children, pagina }) {
           <Sidebar />
         </aside>
         <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
-          <div className="pt-10">{children}</div>
+          <div className="pt-10">
+            <Pasos />
+            {children}
+          </div>
         </main>
       </div>
       {
