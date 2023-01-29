@@ -1,6 +1,6 @@
 import Layout from "../layout/Layout";
-import ResumenProducto from "components/ResumenProducto";
-import useDespensa from "hooks/useDespensa";
+import ResumenProducto from "../components/ResumenProducto";
+import useDespensa from "../hooks/useDespensa";
 
 export default function Resumen() {
   const { pedido } = useDespensa();

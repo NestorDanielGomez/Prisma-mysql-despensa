@@ -1,9 +1,10 @@
 import { useEffect, useCallback } from "react";
 import Layout from "../layout/Layout";
 import useDespensa from "../hooks/useDespensa";
+import { formatearDinero } from "../helpers";
 
 export default function Total() {
-  const { pedido, nombre, setNombre, colocarOrden } = useDespensa();
+  const { pedido, nombre, setNombre, colocarOrden, total } = useDespensa();
 
   const comprobarPedido = useCallback(() => {
     return pedido.length === 0 || nombre === "" || nombre.length < 3;
@@ -21,20 +22,21 @@ export default function Total() {
         <div className="">
           <label
             htmlFor="nombre"
-            className="block text-xl font-bold uppercase text-slate-800"
-            value={nombre}
-            onChange={(e) => setNombre(e.target.value)}>
+            className="block text-xl font-bold uppercase text-slate-800">
             Nombre
           </label>
           <input
             type="text"
             id="nombre"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             className="mt-3 bg-gray-200 w-full lg:w-1/3 p-2 rounded-md"
           />
         </div>
         <div className="mt-10">
           <p className="text-2xl">
-            Total a pagar: {``} <span className="font-bold">$200</span>
+            Total a pagar: {``}{" "}
+            <span className="font-bold">{formatearDinero(total)}</span>
           </p>
         </div>
         <div className="mt-5">
