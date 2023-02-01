@@ -1,4 +1,4 @@
-import Layout from "../Layout/Layout";
+import Layout from "../layout/Layout";
 import useDespensa from "../hooks/useDespensa";
 import Producto from "../components/Producto";
 
