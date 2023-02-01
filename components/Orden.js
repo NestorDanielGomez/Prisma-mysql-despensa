@@ -13,9 +13,9 @@ export default function Orden({ orden }) {
     }
   };
   return (
-    <div className="border p-10 space-y-5">
+    <div className="border p-5 space-y-2">
       <h3 className="text-2xl font-bold">Orden: {id} </h3>
-      <p className="text-lg my-10 font-bold">Cliente: {nombre}</p>
+      <p className="text-lg my-5 font-bold">Cliente: {nombre}</p>
       <div className="">
         {pedido.map((item) => (
           <div
@@ -40,8 +40,8 @@ export default function Orden({ orden }) {
           </div>
         ))}
       </div>
-      <div className="md:flex md:items-center md:justify-between my-10">
-        <p className="mt-5 font-black text-4xl text-amber-600">
+      <div className="md:flex md:items-center md:justify-between my-5">
+        <p className="mt-1 font-black text-4xl text-amber-600">
           Total a Pagar:{formatearDinero(total)}
         </p>
         <button

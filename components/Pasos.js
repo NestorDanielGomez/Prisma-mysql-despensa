@@ -18,7 +18,7 @@ const Pasos = () => {
 
   return (
     <>
-      <div className=" flex justify-between mb-5">
+      <div className=" flex justify-between mb-5 px-3">
         {pasos.map((paso) => (
           <button
             className="text-2xl font-bold"
@@ -30,7 +30,7 @@ const Pasos = () => {
           </button>
         ))}
       </div>
-      <div className="bg-gray-300 mb-10">
+      <div className="bg-gray-300 mb-10 ">
         <div
           style={{ width: `${calcularProgresoPedido()}%` }}
           className="rounded-full bg-amber-500 text-xs leading-none h-2 text-center text-white"></div>

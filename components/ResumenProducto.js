@@ -8,8 +8,8 @@ const ResumenProducto = ({ producto }) => {
     <div className="flex shadow gap-10 p-5 mb-3 items-center">
       <div className="md:w-1/6">
         <Image
-          width={200}
-          height={300}
+          width={150}
+          height={250}
           alt={producto.nombre}
           src={`/assets/img/${producto.imagen}.jpg`}
         />
