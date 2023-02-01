@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { formatearDinero } from "../helpers";
-import useDespensa from "hooks/useDespensa";
+import useDespensa from "../hooks/useDespensa";
 
 const Producto = ({ producto }) => {
   const { handleSetProducto, handleChangeModal } = useDespensa();

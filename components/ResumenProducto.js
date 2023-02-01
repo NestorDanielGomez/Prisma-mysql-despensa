@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { formatearDinero } from "helpers";
-import useDespensa from "hooks/useDespensa";
+import { formatearDinero } from "../helpers";
+import useDespensa from "../hooks/useDespensa";
 
 const ResumenProducto = ({ producto }) => {
   const { handleEditarCantidad, handleEliminarProducto } = useDespensa();

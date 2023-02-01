@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useDespensa from "hooks/useDespensa";
+import useDespensa from "../hooks/useDespensa";
 import Categoria from "./Categoria";
 
 const Sidebar = () => {
